@@ -90,13 +90,16 @@ namespace StoryTeller.Controllers
 
 
             Animal animal = db.Animals.Find(avw.AnimalID);
-            animal.Id = avw.AnimalID;
-            animal.Text += "\n \n" + avw.UserInput;
+            var entry = new Entry() {
+                Text = avw.UserInput,
+                Author = username,
+                CreatedOn = DateTime.Now
+            };
+
+            animal.Entries.Add(entry);
 
             if (ModelState.IsValid)
             {
-                animal.Author = username;
-
                 db.Entry(animal).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

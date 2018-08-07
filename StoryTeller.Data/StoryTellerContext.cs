@@ -14,6 +14,7 @@ namespace StoryTeller.Data
         public DbSet<Princess> Princesses { get; set; }
         public DbSet<Theme> Themes { get; set; }
         public DbSet<Writer> Writers { get; set; }
+        public DbSet<Entry> Entries { get; set; }
         //public DbSet<AspNetRole> AspNetRoles { get; set; }
         //public DbSet<AspNetUser> AspNetUsers { get; set; }
         //public DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
