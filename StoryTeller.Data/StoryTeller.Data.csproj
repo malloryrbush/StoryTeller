@@ -52,9 +52,9 @@
     <Compile Include="AspNetUser.cs" />
     <Compile Include="AspNetUserClaim.cs" />
     <Compile Include="AspNetUserLogin.cs" />
-    <Compile Include="Migrations\201808071804550_Initial.cs" />
-    <Compile Include="Migrations\201808071804550_Initial.Designer.cs">
-      <DependentUpon>201808071804550_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201808071901393_Initial.cs" />
+    <Compile Include="Migrations\201808071901393_Initial.Designer.cs">
+      <DependentUpon>201808071901393_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pirate.cs" />
@@ -69,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808071804550_Initial.resx">
-      <DependentUpon>201808071804550_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808071901393_Initial.resx">
+      <DependentUpon>201808071901393_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

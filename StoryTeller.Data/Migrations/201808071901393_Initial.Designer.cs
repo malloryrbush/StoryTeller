@@ -13,7 +13,7 @@ namespace StoryTeller.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201808071804550_Initial"; }
+            get { return "201808071901393_Initial"; }
         }
         
         string IMigrationMetadata.Source

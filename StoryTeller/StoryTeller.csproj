@@ -315,6 +315,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StoryTeller.Data\StoryTeller.Data.csproj">
+      <Project>{3bcb4a10-f329-4865-a935-aa6193b5481a}</Project>
+      <Name>StoryTeller.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
