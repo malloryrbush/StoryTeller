@@ -1,0 +1,42 @@
+﻿@model StoryTeller.Data.Theme
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Theme</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pirate.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pirate.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Princess.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Princess.Text)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ThemeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
