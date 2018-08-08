@@ -191,8 +191,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FavoritesController.cs" />
     <Compile Include="Controllers\Home.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ParagraphsController.cs" />
     <Compile Include="Controllers\StoriesController.cs" />
     <Compile Include="Controllers\ThemesController.cs" />
