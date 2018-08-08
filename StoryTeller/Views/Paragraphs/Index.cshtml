@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StoryTeller.Data.Favorites>
+﻿@model IEnumerable<StoryTeller.Data.Paragraph>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StoryId)
@@ -23,7 +29,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StoryId)
