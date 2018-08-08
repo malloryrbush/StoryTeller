@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace StoryTeller.Data
 {
-    public class Theme
+    public class Story
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int ThemeId { get; set; }
+
+
+        public Theme Theme { get; set; }
+        public ICollection<Paragraph> Paragraphs { get; set; }
+
+
     }
 }

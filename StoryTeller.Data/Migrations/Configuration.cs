@@ -14,6 +14,20 @@ namespace StoryTeller.Data.Migrations
 
         protected override void Seed(StoryTeller.Data.StoryTellerContext context)
         {
+            context.Themes.AddOrUpdate<Theme>(
+                new Theme()
+                {
+                    Id=1,Name="Princesses"
+                },
+                new Theme()
+                {
+                    Id=2,Name="Pirates"
+                },
+                new Theme()
+                {
+                    Id=3,Name="Animals"
+                }
+                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

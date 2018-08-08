@@ -47,12 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
     <Compile Include="AspNetRole.cs" />
     <Compile Include="AspNetUser.cs" />
     <Compile Include="AspNetUserClaim.cs" />
     <Compile Include="AspNetUserLogin.cs" />
-    <Compile Include="Entry.cs" />
     <Compile Include="Favorites.cs" />
     <Compile Include="Migrations\201808071901393_Initial.cs" />
     <Compile Include="Migrations\201808071901393_Initial.Designer.cs">
@@ -66,16 +64,22 @@
     <Compile Include="Migrations\201808081421545_MalachiIdea.Designer.cs">
       <DependentUpon>201808081421545_MalachiIdea.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808081517257_malachiTwo.cs" />
+    <Compile Include="Migrations\201808081517257_malachiTwo.Designer.cs">
+      <DependentUpon>201808081517257_malachiTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808081554287_Malachi3NewTables.cs" />
+    <Compile Include="Migrations\201808081554287_Malachi3NewTables.Designer.cs">
+      <DependentUpon>201808081554287_Malachi3NewTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Pirate.cs" />
-    <Compile Include="Princess.cs" />
+    <Compile Include="Paragraph.cs" />
+    <Compile Include="Story.cs" />
     <Compile Include="StoryTellerContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Theme.cs" />
-    <Compile Include="Writer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808081421545_MalachiIdea.resx">
       <DependentUpon>201808081421545_MalachiIdea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808081517257_malachiTwo.resx">
+      <DependentUpon>201808081517257_malachiTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808081554287_Malachi3NewTables.resx">
+      <DependentUpon>201808081554287_Malachi3NewTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
