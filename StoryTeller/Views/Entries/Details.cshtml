@@ -1,4 +1,4 @@
-﻿@model StoryTeller.Data.Pirate
+﻿@model StoryTeller.Data.Entry
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Pirate</h4>
+    <h4>Entry</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -16,6 +16,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
         </dd>
 
     </dl>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoryTeller.Data
 {
-    class Favorites
+     public class Favorites
     {
         public int Id { get; set; }
         public int UserId { get; set; }

@@ -15,6 +15,8 @@ namespace StoryTeller.Data
         public DbSet<Theme> Themes { get; set; }
         public DbSet<Writer> Writers { get; set; }
         public DbSet<Entry> Entries { get; set; }
+
+        public System.Data.Entity.DbSet<StoryTeller.Data.Favorites> Favorites { get; set; }
         //public DbSet<AspNetRole> AspNetRoles { get; set; }
         //public DbSet<AspNetUser> AspNetUsers { get; set; }
         //public DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }

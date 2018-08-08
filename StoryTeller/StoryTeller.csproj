@@ -193,6 +193,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
+    <Compile Include="Controllers\EntriesController.cs" />
+    <Compile Include="Controllers\FavoritesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PiratesController.cs" />
@@ -208,6 +210,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PirateViewModel.cs" />
     <Compile Include="Models\PrincessViewModel.cs" />
+    <Compile Include="Models\StoryTellerContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -343,6 +346,16 @@
     <Content Include="Views\Writers\Details.cshtml" />
     <Content Include="Views\Writers\Edit.cshtml" />
     <Content Include="Views\Writers\Index.cshtml" />
+    <Content Include="Views\Entries\Create.cshtml" />
+    <Content Include="Views\Entries\Delete.cshtml" />
+    <Content Include="Views\Entries\Details.cshtml" />
+    <Content Include="Views\Entries\Edit.cshtml" />
+    <Content Include="Views\Entries\Index.cshtml" />
+    <Content Include="Views\Favorites\Create.cshtml" />
+    <Content Include="Views\Favorites\Delete.cshtml" />
+    <Content Include="Views\Favorites\Details.cshtml" />
+    <Content Include="Views\Favorites\Edit.cshtml" />
+    <Content Include="Views\Favorites\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

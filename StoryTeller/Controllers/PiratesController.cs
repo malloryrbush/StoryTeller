@@ -15,7 +15,7 @@ namespace StoryTeller.Controllers
 {
     public class PiratesController : Controller
     {
-        private StoryTellerContext db = new StoryTellerContext();
+        private Data.StoryTellerContext db = new Data.StoryTellerContext();
 
         // GET: Pirates
         public ActionResult Index()

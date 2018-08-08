@@ -6,129 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using StoryTeller;
-using Microsoft.AspNet.Identity;
-using StoryTeller.Models;
 using StoryTeller.Data;
 
 namespace StoryTeller.Controllers
 {
-    public class AnimalsController : Controller
+    public class FavoritesController : Controller
     {
-        private Data.StoryTellerContext db = new Data.StoryTellerContext();
+        private StoryTellerContext db = new StoryTellerContext();
 
-        // GET: Animals
+        // GET: Favorites
         public ActionResult Index()
         {
-            return View(db.Animals.ToList());
+            return View(db.Favorites.ToList());
         }
 
-        // GET: Animals/Details/5
+        // GET: Favorites/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Animal animal = db.Animals.Find(id);
-            if (animal == null)
+            Favorites favorites = db.Favorites.Find(id);
+            if (favorites == null)
             {
                 return HttpNotFound();
             }
-            return View(animal);
+            return View(favorites);
         }
 
-        // GET: Animals/Create
+        // GET: Favorites/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Animals/Create
+        // POST: Favorites/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnimalID,Text,UserInput")] Animal animal)
+        public ActionResult Create([Bind(Include = "Id,UserId,EntryId")] Favorites favorites)
         {
             if (ModelState.IsValid)
             {
-                db.Animals.Add(animal);
+                db.Favorites.Add(favorites);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(animal);
+            return View(favorites);
         }
 
-        // GET: Animals/Edit/5
+        // GET: Favorites/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Animal animal = db.Animals.Find(id);
-            if (animal == null)
+            Favorites favorites = db.Favorites.Find(id);
+            if (favorites == null)
             {
                 return HttpNotFound();
             }
-            var avw = new AnimalViewModel();
-            avw.AnimalID = animal.Id;
-            avw.Text = animal.Text;
-            return View(avw);
+            return View(favorites);
         }
 
-        // POST: Animals/Edit/5
+        // POST: Favorites/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnimalID,Text,UserInput")] AnimalViewModel avw)
+        public ActionResult Edit([Bind(Include = "Id,UserId,EntryId")] Favorites favorites)
         {
-            var username = HttpContext.User.Identity.GetUserName();
-
-
-            Animal animal = db.Animals.Find(avw.AnimalID);
-            var entry = new Entry() {
-                Text = avw.UserInput,
-                Author = username,
-                CreatedOn = DateTime.Now
-            };
-
-            animal.Entries.Add(entry);
-
             if (ModelState.IsValid)
             {
-                db.Entry(animal).State = EntityState.Modified;
+                db.Entry(favorites).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(animal.Text);
+            return View(favorites);
         }
 
-        // GET: Animals/Delete/5
+        // GET: Favorites/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Animal animal = db.Animals.Find(id);
-            if (animal == null)
+            Favorites favorites = db.Favorites.Find(id);
+            if (favorites == null)
             {
                 return HttpNotFound();
             }
-            return View(animal);
+            return View(favorites);
         }
 
-        // POST: Animals/Delete/5
+        // POST: Favorites/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Animal animal = db.Animals.Find(id);
-            db.Animals.Remove(animal);
+            Favorites favorites = db.Favorites.Find(id);
+            db.Favorites.Remove(favorites);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -141,9 +123,5 @@ namespace StoryTeller.Controllers
             }
             base.Dispose(disposing);
         }
-
-
     }
-
 }
-
