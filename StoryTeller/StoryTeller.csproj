@@ -226,6 +226,7 @@
     <Content Include="homePageIcons\pirate.png" />
     <Content Include="homePageIcons\pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="homePageIcons\princess.svg" />
+    <Content Include="navbarIcons\open-book.png" />
     <Content Include="pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

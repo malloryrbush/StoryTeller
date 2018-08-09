@@ -14,7 +14,5 @@ namespace StoryTeller.Data
 
         public Theme Theme { get; set; }
         public ICollection<Paragraph> Paragraphs { get; set; }
-
-
     }
 }
