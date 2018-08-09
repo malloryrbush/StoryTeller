@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<StoryTeller.Data.Story>
-
 @{
     ViewBag.Title = "Index";
 }
@@ -9,25 +8,27 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Theme.Name)
-        </th>
-        <th></th>
-    </tr>
+
+<div>
+
+    @Html.DisplayNameFor(model => model.Theme.Name)
+</div>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    
+        <div>
             @Html.DisplayFor(modelItem => item.Theme.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+        </div>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+            @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id},null)
+        </div>
+     
+    
+    
+  
 }
+    
 
-</table>

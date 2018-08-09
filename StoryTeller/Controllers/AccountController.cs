@@ -479,7 +479,13 @@ namespace StoryTeller.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+
+           
         }
+        public JsonResult GetUserId()
+            {
+            return Json(User.Identity.GetUserName(), JsonRequestBehavior.AllowGet);
+            }
         #endregion
     }
 }

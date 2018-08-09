@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201808081554287_Malachi3NewTables.Designer.cs">
       <DependentUpon>201808081554287_Malachi3NewTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808081827169_malachifour.cs" />
+    <Compile Include="Migrations\201808081827169_malachifour.Designer.cs">
+      <DependentUpon>201808081827169_malachifour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808091640523_malachifive.cs" />
+    <Compile Include="Migrations\201808091640523_malachifive.Designer.cs">
+      <DependentUpon>201808091640523_malachifive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Paragraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808081554287_Malachi3NewTables.resx">
       <DependentUpon>201808081554287_Malachi3NewTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808081827169_malachifour.resx">
+      <DependentUpon>201808081827169_malachifour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808091640523_malachifive.resx">
+      <DependentUpon>201808091640523_malachifive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

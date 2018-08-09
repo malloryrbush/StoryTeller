@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using StoryTeller.Data;
 using StoryTeller.Models;
+using Microsoft.AspNet.Identity;
 
 namespace StoryTeller.Controllers
 {
@@ -124,5 +125,20 @@ namespace StoryTeller.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+
+        public ActionResult SetFav(Favorites Fav, int id)
+        {
+            Fav.StoryId = id;
+            Fav.UserId = (User.Identity.GetUserId());
+
+            db.Favorites.Add(Fav);
+            db.SaveChanges();
+
+            return RedirectToAction("index");
+
+        }
+
+        
+
+    } 
 }
