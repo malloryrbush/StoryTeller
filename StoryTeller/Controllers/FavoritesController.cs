@@ -17,9 +17,9 @@ namespace StoryTeller.Controllers
         private Data.StoryTellerContext db = new Data.StoryTellerContext();
 
         // GET: Favorites
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(db.Favorites.ToList());
+            return View(db.Favorites.Where(p => p.StoryId == id).ToList());
         }
 
         // GET: Favorites/Details/5

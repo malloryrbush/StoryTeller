@@ -23,7 +23,11 @@
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
             @Html.ActionLink("Details", "Details", new { id = item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
-            @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id},null)
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id }, null)
+            }
+
         </div>
      
     
