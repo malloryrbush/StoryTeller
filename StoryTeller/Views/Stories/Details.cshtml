@@ -17,7 +17,24 @@
         <dd>
             @Html.DisplayFor(model => model.Theme.Name)
         </dd>
+        <dd>
+            @foreach (var item in Model.Paragraphs)
+            {
+                <p>@item.Text</p>
+            }
+        </dd>
 
+        @{
+            if (Model.Paragraphs.Count == 9)
+            {
+                <dd>is the final post, please write an ending!</dd>
+            }
+
+            if (Model.Paragraphs.Count < 10)
+            {
+                { Html.RenderPartial("~/Views/Paragraphs/Create.cshtml", new Paragraph() { StoryId = Model.Id });}
+            }
+        }
     </dl>
 </div>
 <p>

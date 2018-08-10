@@ -7,18 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StoryTeller.Data;
-using StoryTeller.Models;
 
 namespace StoryTeller.Controllers
 {
     public class ParagraphsController : Controller
     {
-        private Data.StoryTellerContext db = new Data.StoryTellerContext();
+        private StoryTellerContext db = new StoryTellerContext();
 
         // GET: Paragraphs
-        public ActionResult Index()
+        public ActionResult Index(/*int id*/)
         {
-            return View(db.Paragraphs.ToList());
+            var paragraphs = db.Paragraphs/*.Where(p=>p.StoryId==id)*/.Include(p => p.Story);
+            return View(paragraphs.ToList());
         }
 
         // GET: Paragraphs/Details/5
@@ -39,6 +39,7 @@ namespace StoryTeller.Controllers
         // GET: Paragraphs/Create
         public ActionResult Create()
         {
+            ViewBag.StoryId = new SelectList(db.Stories, "Id", "Id");
             return View();
         }
 
@@ -47,15 +48,18 @@ namespace StoryTeller.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Text,Author,CreatedOn,StoryId")] Paragraph paragraph)
+        public ActionResult Create([Bind(Include = "Id,Text,StoryId")] Paragraph paragraph)
         {
             if (ModelState.IsValid)
             {
+                paragraph.CreatedOn = DateTime.Now;
+                paragraph.Author = User.Identity.Name;
                 db.Paragraphs.Add(paragraph);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details","Stories",new { id = paragraph.StoryId });
             }
 
+            ViewBag.StoryId = new SelectList(db.Stories, "Id", "Id", paragraph.StoryId);
             return View(paragraph);
         }
 
@@ -71,6 +75,7 @@ namespace StoryTeller.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.StoryId = new SelectList(db.Stories, "Id", "Id", paragraph.StoryId);
             return View(paragraph);
         }
 
@@ -87,6 +92,7 @@ namespace StoryTeller.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.StoryId = new SelectList(db.Stories, "Id", "Id", paragraph.StoryId);
             return View(paragraph);
         }
 

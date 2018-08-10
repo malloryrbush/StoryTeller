@@ -15,5 +15,7 @@ namespace StoryTeller.Data
 
 
         public int StoryId { get; set; }
+        public Story Story { get; set; }
+
     }
 }
