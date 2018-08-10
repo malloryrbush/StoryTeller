@@ -13,14 +13,14 @@
         <dt>
             @Html.DisplayNameFor(model => model.Theme.Name)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Theme.Name)
         </dd>
         <dd>
             @foreach (var item in Model.Paragraphs)
             {
-                <p>@item.Text</p>
+                <p>@item.Text <br />
+            by : @item.Author</p>
             }
         </dd>
 

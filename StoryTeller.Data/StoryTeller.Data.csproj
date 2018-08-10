@@ -84,6 +84,10 @@
     <Compile Include="Migrations\201808101417003_malachiIsCool.Designer.cs">
       <DependentUpon>201808101417003_malachiIsCool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808101832131_AddedTitle.cs" />
+    <Compile Include="Migrations\201808101832131_AddedTitle.Designer.cs">
+      <DependentUpon>201808101832131_AddedTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Paragraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808101417003_malachiIsCool.resx">
       <DependentUpon>201808101417003_malachiIsCool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808101832131_AddedTitle.resx">
+      <DependentUpon>201808101832131_AddedTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

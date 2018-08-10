@@ -10,6 +10,7 @@ namespace StoryTeller.Data
     {
         public int Id { get; set; }
         public int ThemeId { get; set; }
+        public string Title { get; set; }
 
 
         public Theme Theme { get; set; }
