@@ -40,7 +40,7 @@ namespace StoryTeller.Controllers
         // GET: Stories/Create
         public ActionResult Create()
         {
-            ViewBag.ThemeId = new SelectList(db.Themes, "Id", "Name");
+            ViewBag.ThemeId = new SelectList(db.Themes, "Id", "Name", "Title");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace StoryTeller.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ThemeId")] Story story)
+        public ActionResult Create([Bind(Include = "Id,ThemeId,Title")] Story story)
         {
             if (ModelState.IsValid)
             {
