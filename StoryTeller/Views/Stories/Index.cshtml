@@ -15,26 +15,33 @@
     @Html.DisplayNameFor(model => model.Title)
 </div>
 
-@foreach (var item in Model) {
-    
-<div>
-    @Html.DisplayFor(modelItem => item.Theme.Name)
-    @Html.DisplayFor(modelItem => item.Title)
-</div>
-        <div>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
-            @if (User.Identity.IsAuthenticated)
-            {
-                @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id }, null)
-            }
+@foreach (var item in Model)
+{
 
-        </div>
-     
-    
-    
-  
+    <div>
+        @Html.DisplayFor(modelItem => item.Theme.Name)
+        @Html.DisplayFor(modelItem => item.Title)
+
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id })|
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id }, null)
+        }
+        @* Code for to let the user know if the story is finished *@
+        @if (item.Paragraphs.Count == 10)
+        {
+            <p>Finished</p>
+        }
+        else
+        {
+            <p>Unfinished</p>
+        }
+    </div>
 }
-    
+
+
 

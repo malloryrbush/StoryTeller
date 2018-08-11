@@ -15,9 +15,9 @@ namespace StoryTeller.Controllers
         private StoryTellerContext db = new StoryTellerContext();
 
         // GET: Paragraphs
-        public ActionResult Index(/*int id*/)
+        public ActionResult Index()
         {
-            var paragraphs = db.Paragraphs/*.Where(p=>p.StoryId==id)*/.Include(p => p.Story);
+            var paragraphs = db.Paragraphs.Include(p => p.Story);
             return View(paragraphs.ToList());
         }
 
@@ -53,7 +53,16 @@ namespace StoryTeller.Controllers
             if (ModelState.IsValid)
             {
                 paragraph.CreatedOn = DateTime.Now;
-                paragraph.Author = User.Identity.Name;
+
+                //shows the saves the author's username, if not it saves an "anonymous"
+                if (User.Identity.IsAuthenticated)
+                {
+                    paragraph.Author = User.Identity.Name;
+                }
+                else
+                {
+                    paragraph.Author = "anonymous";
+                }
                 db.Paragraphs.Add(paragraph);
                 db.SaveChanges();
                 return RedirectToAction("Details","Stories",new { id = paragraph.StoryId });

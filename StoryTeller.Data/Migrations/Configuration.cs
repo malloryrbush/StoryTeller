@@ -26,6 +26,10 @@ namespace StoryTeller.Data.Migrations
                 new Theme()
                 {
                     Id=3,Name="Animals"
+                },
+                new Theme()
+                {
+                    Id=4,Name="Other"
                 }
                 );
             //  This method will be called after migrating to the latest version.

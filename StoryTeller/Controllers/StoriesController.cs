@@ -18,7 +18,7 @@ namespace StoryTeller.Controllers
         // GET: Stories
         public ActionResult Index()
         {
-            var stories = db.Stories.Include(s => s.Theme);
+            var stories = db.Stories.Include(s => s.Theme).Include(s =>s.Paragraphs);
             return View(stories.ToList());
         }
 
