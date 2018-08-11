@@ -29,7 +29,7 @@
         @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
         @if (User.Identity.IsAuthenticated)
         {
-            @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id }, null)
+            @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id, title=item.Title }, null)
         }
         @* Code for to let the user know if the story is finished *@
         @if (item.Paragraphs.Count == 10)

@@ -127,10 +127,11 @@ namespace StoryTeller.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult SetFav(Favorites Fav, int id)
+        public ActionResult SetFav(Favorites Fav, int id,string title)
         {
             Fav.StoryId = id;
             Fav.UserId = (User.Identity.GetUserId());
+            Fav.Title = title;
 
             db.Favorites.Add(Fav);
             db.SaveChanges();

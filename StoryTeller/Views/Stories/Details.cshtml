@@ -9,25 +9,22 @@
 <div>
     <h4>Story</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <div>
             @Html.DisplayNameFor(model => model.Theme.Name)
-        </dt>
-        <dd>
+
             @Html.DisplayFor(model => model.Theme.Name)
-        </dd>
-        <dd>
+
             @foreach (var item in Model.Paragraphs)
             {
                 <p>@item.Text <br />
             by : @item.Author</p>
             }
-        </dd>
-
+    </div>
+    <div>
         @{
             if (Model.Paragraphs.Count == 9)
             {
-                <dd>is the final post, please write an ending!</dd>
+                <p>is the final post, please write an ending!</p>
             }
 
             if (Model.Paragraphs.Count < 10)
@@ -35,7 +32,7 @@
                 { Html.RenderPartial("~/Views/Paragraphs/Create.cshtml", new Paragraph() { StoryId = Model.Id });}
             }
         }
-    </dl>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
