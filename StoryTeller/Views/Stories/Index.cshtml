@@ -9,7 +9,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<div>
+<div> 
 
     @Html.DisplayNameFor(model => model.Theme.Name)
     @Html.DisplayNameFor(model => model.Title)
@@ -31,7 +31,7 @@
         {
             @Html.ActionLink("Favorites", "SetFav", "Favorites", new { id = item.Id, title=item.Title }, null)
         }
-        @* Code for to let the user know if the story is finished *@
+        @*Code to let the user know if the story is finished *@
         @if (item.Paragraphs.Count == 10)
         {
             <p>Finished</p>

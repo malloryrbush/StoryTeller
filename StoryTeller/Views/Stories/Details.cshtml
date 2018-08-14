@@ -6,21 +6,23 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Story</h4>
-    <hr />
-    <div>
-            @Html.DisplayNameFor(model => model.Theme.Name)
+<div class="detailsContainer">
+    <h1 class="detailsTitle">@Html.DisplayName(Model.Title)</h1>
 
-            @Html.DisplayFor(model => model.Theme.Name)
 
-            @foreach (var item in Model.Paragraphs)
-            {
-                <p>@item.Text <br />
-            by : @item.Author</p>
-            }
+    <div class="@Model.Theme.Name">
+        @* Leave this empty *@
     </div>
-    <div>
+
+
+        @foreach (var item in Model.Paragraphs)
+        {
+            <div class="detailsParagraphs">
+                @item.Text <br />
+                <div class="detailsAuthor">by : @item.Author</div>
+            </div>
+        }
+    <div class="detailsPartialView">
         @{
             if (Model.Paragraphs.Count == 9)
             {
@@ -29,12 +31,11 @@
 
             if (Model.Paragraphs.Count < 10)
             {
-                { Html.RenderPartial("~/Views/Paragraphs/Create.cshtml", new Paragraph() { StoryId = Model.Id });}
+                { Html.RenderPartial("~/Views/Paragraphs/Create.cshtml", new Paragraph() { StoryId = Model.Id }); }
             }
         }
     </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

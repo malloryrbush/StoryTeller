@@ -22,3 +22,211 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Details stylings*/
+.detailsContainer{
+    display:grid;
+    grid-template-rows:repeat(15,100px);
+    grid-template-columns:repeat(15,1fr);
+    width:100%;
+    text-align:center;
+    word-wrap:break-word;
+    font-size:1vw;
+    min-width:375px;
+    grid-gap:10px;
+}
+.detailsTitle{
+    grid-column:span 15;
+}
+.detailsParagraphs{
+    grid-column:span 15;
+}
+.detailsPartialView{
+    grid-column:span 15;
+}
+.detailsAuthor{
+    color:darkslategrey;
+}
+/*Styling for each individual themes*/
+.Animals {
+    grid-column: span 15;
+    background-image: url('../homePageIcons/frog.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: auto;
+    grid-row: span 2;
+}
+.Pirates {
+    grid-column: span 15;
+    background-image: url('../pirateImages/austin-neill-685080-unsplash.jpg'); /*Place image here*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: auto;
+    grid-row: span 2;
+}
+.Princesses {
+    grid-column: span 15;
+    background-image: url('../homePageIcons/princess.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: auto;
+    grid-row: span 2;
+}
+.Other {
+    grid-column: span 15;
+    background-image: url('../homePageIcons/pirate.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: auto;
+    grid-row: span 2;
+}
+/* Media Queries for individual themes*/
+@media only screen and (max-width:1125px){
+    .detailsContainer {
+        grid-template-rows: repeat(15,150px);
+        font-size:1.4vw;
+    }
+    .Animals{
+        height: 300px;
+    }
+    .Princesses {
+        height: 300px;
+    }
+    .Pirates {
+        height: 300px;
+    }
+    .Other {
+        height: 300px;
+    }
+}
+@media only screen and (max-width:1000px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,200px);
+        font-size: 1.7vw;
+    }
+    .Animals {
+        height: 400px;
+    }
+
+    .Princesses {
+        height: 400px;
+    }
+
+    .Pirates {
+        height: 400px;
+    }
+
+    .Other {
+        height: 400px;
+    }
+}
+@media only screen and (max-width:875px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,250px);
+        font-size: 2vw;
+    }
+    .Animals {
+        height: 500px;
+    }
+
+    .Princesses {
+        height: 500px;
+    }
+
+    .Pirates {
+        height: 500px;
+    }
+
+    .Other {
+        height: 500px;
+    }
+}
+@media only screen and (max-width:750px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,300px);
+        font-size: 2.3vw;
+    }
+    .Animals {
+        height: 600px;
+    }
+
+    .Princesses {
+        height: 600px;
+    }
+
+    .Pirates {
+        height: 600px;
+    }
+
+    .Other {
+        height: 600px;
+    }
+}
+@media only screen and (max-width:625px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,350px);
+        font-size: 2.6vw;
+    }
+        .Animals{
+        height: 700px;
+    }
+    .Princesses {
+        height: 700px;
+    }
+    .Pirates {
+        height: 700px;
+    }
+    .Other {
+        height: 700px;
+    }
+}
+@media only screen and (max-width:500px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,400px);
+        font-size: 3.2vw;
+    }
+    .Animals {
+        height: 800px;
+    }
+
+    .Princesses {
+        height: 800px;
+    }
+
+    .Pirates {
+        height: 800px;
+    }
+
+    .Other {
+        height: 800px;
+    }
+}
+@media only screen and (max-width:375px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,450px);
+        font-size: 3.5vw;
+    }
+    .Animals {
+        height: 900px;
+    }
+
+    .Princesses {
+        height: 900px;
+    }
+
+    .Pirates {
+        height: 900px;
+    }
+
+    .Other {
+        height: 900px;
+    }
+}

@@ -29,7 +29,7 @@ namespace StoryTeller.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Story story = db.Stories.Include(s => s.Paragraphs).Single(s => s.Id==id.Value);
+            Story story = db.Stories.Include(s => s.Theme).Include(s => s.Paragraphs).Single(s => s.Id==id.Value);
             if (story == null)
             {
                 return HttpNotFound();
