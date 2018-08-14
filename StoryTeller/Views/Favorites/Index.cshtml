@@ -1,29 +1,29 @@
-﻿@model IEnumerable<StoryTeller.Data.Favorites>
-
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-    <div>
-        @Html.DisplayNameFor(model => model.StoryId)
-    </div>
-
-    @foreach (var item in Model)
-    {
-    <div>
-        @Html.DisplayFor(modelItem=> item.Title)
-        @Html.ActionLink("Go to Story","Details","Stories",new { Id=item.StoryId},null)
-
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </div>
+﻿<div class="container-favorite">
+    @model IEnumerable<StoryTeller.Data.Favorites>
+    @{
+        ViewBag.Title = "Your Favorite Stories";
     }
+    <h2 id="favtitle">Favorite Stories</h2>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    @*<div>
+            @Html.DisplayNameFor(model => model.StoryId)
+        </div>*@
+    <div class="favstories">
+        @foreach (var item in Model)
+        {
+            <p>
+                Story Name:
+                @Html.DisplayFor(modelItem => item.Title)
+            </p>
+            <p>@Html.ActionLink("Go to Story", "Details", "Stories", new { Id = item.StoryId }, null)</p>
+            <p>@Html.ActionLink("Remove from Favorites", "Delete", new { id = item.Id })</p>
+            <br>
 
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id })*@
+            @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
 
-
+        }
+    </div>
+</div>

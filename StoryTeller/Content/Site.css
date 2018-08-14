@@ -1,33 +1,78 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*Navbar styling*/
+.navbar {
+    grid-row: 1;
+    grid-column: 1 / span 6;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    font-family: 'Acme';
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+li {
+    float: left;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+    li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        border-right: 1px solid lightgray;
+    }
+
+        li a:hover {
+            background-color: #DDC7FF;
+        }
+
+    li:last-child {
+        border-right: none;
+    }
+/*end of navbar styling*/
+
+/*stories styling*/
+.containerStories {
+    display: grid;
+    grid-template-columns: repeat(6, 220px);
+    grid-template-rows: repeat(200, 55px);
+    min-width: 1336px;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
 }
+
+.wrapperStories {
+    display: grid;
+    grid-template-columns: 190% 190% 190%;
+    grid-gap: 10px;
+    background-color: white;
+    color: white;
+    font-family: 'Acme';
+}
+
+.boxStories {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 100%;
+}
+/*end of story styling*/
 
 /*Details stylings*/
 .detailsContainer{
     display:grid;
     grid-template-rows:repeat(15,100px);
-    grid-template-columns:repeat(15,1fr);
+    grid-template-columns:repeat(15, 1fr);
     width:100%;
     text-align:center;
     word-wrap:break-word;
@@ -230,3 +275,70 @@ textarea {
         height: 900px;
     }
 }
+/*End of details styling*/
+
+/*Favorites Stylings*/
+.container-favorite {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(18, 50px);
+    max-width: 1336px;
+    width: 100%;
+}
+
+#favtitle {
+    grid-column: 6 / span 2;
+    grid-row: 2;
+    text-align: center;
+}
+
+.favstories {
+    grid-column: 6 /span 2;
+    grid-row: 3;
+    text-align: center;
+    font-family: Miriam;
+}
+
+/*end of favorites styling*/
+
+/*Home Page stylings*/
+.homeContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 220px);
+    grid-template-rows: repeat(25, 55px);
+    min-width: 1336px;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.homeBackground {
+    grid-row: 1 / span 13;
+    grid-column: 1 / span 6;
+    background-image: url('../../Images/storybook3.jpg');
+    background-size: cover;
+}
+
+#welcomeText {
+    grid-row: 5;
+    grid-column: 1 / 7;
+    margin-top: 100px;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 50px;
+    color: gold;
+    text-align: center;
+    justify-content: center;
+}
+
+#writer {
+    grid-row: 6;
+    grid-column: 1 / 7;
+    margin-top: 25px;
+    margin-left: 45px;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 30px;
+    color: gold;
+    text-align: center;
+    justify-content: center;
+}
+/*end of hompage stylings*/

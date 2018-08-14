@@ -1,25 +1,24 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="container">
-    <div class="grid-item homeText">
-        <p> Please choose the theme of your story:</p>
-    </div>
+<div class="homeContainer">
+    <div class="grid-item homeBackground">
+        <div class="grid-item title">
+            <p id="welcomeText">
+                Welcome to Storyteller
+            </p>
+        </div>
+        <div class="grid-item author">
+            <p id="writer">where you are the author </p>
+        </div>
+        <div class="grid-item theme">
+            <div class="choice" id="choose">
 
-    <div class="grid-item themeLinks">
-        <a class="themeLink" href="/Animals/Index">
-            <img class="themeLinkBorder" src="~/homePageIcons/frog.png" width="100" />
-        </a>
-        <a class="themeLink" href="/Pirates/Index">
-            <img class="themeLinkBorder" src="~/homePageIcons/pirate.png" width="100" />
-        </a>
-        <a class="themeLink" href="/Princesses/Index">
-            <img class="themeLinkBorder" src="~/homePageIcons/princess.svg" width="100" />
-        </a>
-    </div>
+                <div class="grid-item link">
 
-    <div class="grid-item themeDescriptions">
-        <p id="descriptionText">Animals Pirates Princesses</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

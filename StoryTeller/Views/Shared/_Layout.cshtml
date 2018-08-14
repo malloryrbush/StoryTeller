@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Acme%7CAlmendra+SC%7CAmaranth%7CBree+Serif%7CCarter+One%7CChela+One%7CCoiny%7CConcert+One%7CConvergence%7CGabriela%7CGermania+One%7CHandlee%7CItim%7CJolly+Lodger%7CJosefin+Sans%7CKalam%7CModern+Antiqua%7CNeucha%7CPatrick+Hand%7CPirata+One%7CShojumaru%7CUnifrakturCook:700" rel="stylesheet">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
@@ -14,7 +15,7 @@
     <div class="grid-item navbar">
         <ul>
             <li><a href="/Home/Index">Home</a></li>
-            <li><a href="#">Read</a></li>
+            <li><a href="#"><i class="fas fa-book"> Read</i></a></li>
             <li style="float:right"> @Html.Partial("_LoginPartial")</li>
         </ul>
     </div>
