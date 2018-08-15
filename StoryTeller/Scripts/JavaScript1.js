@@ -14,3 +14,7 @@ function myFunction(xhttp) {
         document.getElementById("demo").innerHTML =
         xhttp.responseText;
     }
+
+function ruleAlert() {
+    alert("RULES FOR POSTING:    1. NO SWEARING.       2. HAVE FUN.");
+}

@@ -13,7 +13,30 @@
     <div class="@Model.Theme.Name">
         @* Leave this empty *@
     </div>
+    <div id="prompts">
+        @if (Model.Theme.Name == "Pirates")
+        {
+            <p>
+                The night was dark and the sea was calm.A ship sailed silently over the water.In the distance, a light was flickering.
+                As the ship came closer to the light, the crew coud see the unmistakable flag flying on the approaching ship.The peace was soon
+                broken as ife....
+            </p>}
 
+        @if (Model.Theme.Name == "Animals")
+        {
+            <p>
+                In a little meadow, nestled in the woods, was a pond.  It was quiet and peaceful, and the woodland animals would come to drink
+                and nibble at the flowers along the bank.  A mother rabbit, with her little bunnies, were skipping around in the grass, when all of a sudden.....
+            </p>}
+
+        @if (Model.Theme.Name == "Princesses")
+        {
+            <p>
+                There once was a young princess named Cordelia.  She lived in a high castle overlooking the sea.  She spent her days walking through beautiful
+        gardens, sitting in court with the king and queen and often getting very bored.  She wondered what was beyond the castle walls and longed to see
+        the world.  So one day....
+            </p>}
+    </div>
 
         @foreach (var item in Model.Paragraphs)
         {

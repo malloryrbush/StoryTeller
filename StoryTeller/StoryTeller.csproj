@@ -274,6 +274,10 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="StoriesIndexPhotos\image %282%29.png" />
+    <Content Include="StoriesIndexPhotos\piggy.jpg" />
+    <Content Include="StoriesIndexPhotos\princess.png" />
+    <Content Include="StoriesIndexPhotos\pirates.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

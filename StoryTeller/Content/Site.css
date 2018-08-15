@@ -42,11 +42,12 @@ li {
 .containerStories {
     display: grid;
     grid-template-columns: repeat(6, 220px);
-    grid-template-rows: repeat(200, 55px);
+    grid-template-rows: repeat(20, auto);
     min-width: 1336px;
     width: 90%;
     margin: 0px;
     padding: 0px;
+    padding-left:2%
 }
 
 .wrapperStories {
@@ -66,19 +67,76 @@ li {
     padding: 20px;
     font-size: 100%;
 }
+
+.princessStories {
+    background-color: rgba(118, 113, 113, 0.46);
+    background-image: url('../StoriesIndexPhotos/princess.png');
+    background-size: cover;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+.pirateStories {
+    background-image: url('../homepageicons/pirateimages/austin-neill-685080-unsplash.jpg');
+    background-size: cover;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+}
+
+.animalStories {
+    background-image: url('../StoriesIndexPhotos/image (2).png');
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.otherStories {
+    background-color:orange;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.storiesHeader {
+    padding-top: 6%;
+    text-align: center;
+    font-family: 'Acme';
+}
 /*end of story styling*/
 
-/*Details stylings*/
-.detailsContainer{
-    display:grid;
-    grid-template-rows:repeat(15,100px);
-    grid-template-columns:repeat(15, 1fr);
-    width:100%;
+/*STORIES AND FAVORITES ZOOM*/
+.zoom {
+    padding:0px;
+    transition: transform .2s; /* Animation */
+    margin: 5px;
+}
+
+    .zoom:hover {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+/*END STORIES AND FAVORITES ZOOM*/
+
+/*Favorites styling*/
+.favoritesTitle {
+    padding-top: 6%;
+    font-family: 'Acme';
     text-align:center;
-    word-wrap:break-word;
-    font-size:1vw;
-    min-width:375px;
-    grid-gap:10px;
+}
+/*End of favorites styling*/
+
+/*Details stylings*/
+.detailsContainer {
+    display: grid;
+    grid-template-rows: repeat(15,100px);
+    grid-template-columns: repeat(15, 1fr);
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 1vw;
+    min-width: 375px;
+    grid-gap: 10px;
 }
 .detailsTitle{
     grid-column:span 15;
@@ -92,10 +150,16 @@ li {
 .detailsAuthor{
     color:darkslategrey;
 }
+
+#prompts{
+    grid-column:2/span 13;
+
+
+}
 /*Styling for each individual themes*/
 .Animals {
     grid-column: span 15;
-    background-image: url('../homePageIcons/frog.png');
+    background-image: url('../StoriesIndexPhotos/piggy.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -103,20 +167,21 @@ li {
     width: auto;
     grid-row: span 2;
 }
+
 .Pirates {
-    grid-column: span 15;
-    background-image: url('../pirateImages/austin-neill-685080-unsplash.jpg'); /*Place image here*/
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 200px;
-    width: auto;
-    grid-row: span 2;
-}
+        grid-column: span 15;
+        background-image: url('../StoriesIndexPhotos/pirates.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 200px;
+        width: auto;
+        grid-row: span 2;
+    }
 .Princesses {
     grid-column: span 15;
-    background-image: url('../homePageIcons/princess.svg');
-    background-size: contain;
+    background-image: url('../StoriesIndexPhotos/princess.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 200px;
@@ -133,6 +198,15 @@ li {
     width: auto;
     grid-row: span 2;
 }
+/*end individual themes*/
+
+/*MAKING TEXT AREA BIGGER FOR SUBMITTING STORIES*/
+textarea {
+    width: 400px;
+    height: 200px;
+}
+/*END TEXT AREA*/
+
 /* Media Queries for individual themes*/
 @media only screen and (max-width:1125px){
     .detailsContainer {
@@ -277,35 +351,11 @@ li {
 }
 /*End of details styling*/
 
-/*Favorites Stylings*/
-.container-favorite {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(18, 50px);
-    max-width: 1336px;
-    width: 100%;
-}
-
-#favtitle {
-    grid-column: 6 / span 2;
-    grid-row: 2;
-    text-align: center;
-}
-
-.favstories {
-    grid-column: 6 /span 2;
-    grid-row: 3;
-    text-align: center;
-    font-family: Miriam;
-}
-
-/*end of favorites styling*/
-
 /*Home Page stylings*/
 .homeContainer {
     display: grid;
     grid-template-columns: repeat(6, 220px);
-    grid-template-rows: repeat(25, 55px);
+    grid-template-rows: repeat(10, 65px);
     min-width: 1336px;
     width: 90%;
     margin: 0px;
@@ -320,25 +370,25 @@ li {
 }
 
 #welcomeText {
-    grid-row: 5;
-    grid-column: 1 / 7;
+    /*grid-row: 5;
+    grid-column: 1 / 7;*/
     margin-top: 100px;
     font-family: 'Amaranth', sans-serif;
     font-size: 50px;
     color: gold;
     text-align: center;
-    justify-content: center;
+    text-shadow: 2px 2px #ff0000;
 }
 
 #writer {
-    grid-row: 6;
-    grid-column: 1 / 7;
-    margin-top: 25px;
-    margin-left: 45px;
+    /*grid-row: 2;
+    grid-column: 1 / 7;*/
+    /*margin-top: 25px;
+    margin-left: 45px;*/
     font-family: 'Amaranth', sans-serif;
     font-size: 30px;
     color: gold;
     text-align: center;
-    justify-content: center;
+    text-shadow: 2px 2px #ff0000;
 }
 /*end of hompage stylings*/
