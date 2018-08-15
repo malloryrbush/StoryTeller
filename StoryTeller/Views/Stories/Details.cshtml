@@ -10,7 +10,7 @@
     <h1 class="detailsTitle">@Html.DisplayName(Model.Title)</h1>
 
 
-    <div class="@Model.Theme.Name">
+    <div class="@foreach (var item in Model.Paragraphs) {if (item.Text.ToString().Contains("dog")) { <p> Dog </p> } }">
         @* Leave this empty *@
     </div>
     <div id="prompts">
@@ -33,18 +33,18 @@
         {
             <p>
                 There once was a young princess named Cordelia.  She lived in a high castle overlooking the sea.  She spent her days walking through beautiful
-        gardens, sitting in court with the king and queen and often getting very bored.  She wondered what was beyond the castle walls and longed to see
-        the world.  So one day....
+                gardens, sitting in court with the king and queen and often getting very bored.  She wondered what was beyond the castle walls and longed to see
+                the world.  So one day....
             </p>}
     </div>
 
-        @foreach (var item in Model.Paragraphs)
-        {
-            <div class="detailsParagraphs">
-                @item.Text <br />
-                <div class="detailsAuthor">by : @item.Author</div>
-            </div>
-        }
+    @foreach (var item in Model.Paragraphs)
+    {
+        <div class="detailsParagraphs">
+            @item.Text <br />
+            <div class="detailsAuthor">by : @item.Author</div>
+        </div>
+    }
     <div class="detailsPartialView">
         @{
             if (Model.Paragraphs.Count == 9)

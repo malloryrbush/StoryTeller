@@ -19,6 +19,10 @@ function ruleAlert() {
     alert("RULES FOR POSTING:    1. NO SWEARING.       2. HAVE FUN.");
 }
 
+function faveButton(){
+    document.getElementsByClassName("storiesIndexText").innerHTML = "a"
+}
+
 
 // Get the modal
 var modal = document.getElementById('myModal');
