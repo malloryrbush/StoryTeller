@@ -228,6 +228,7 @@
     <Content Include="homePageIcons\pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="homePageIcons\princess.svg" />
     <Content Include="homePageIcons\quill-drawing-a-line.png" />
+    <Content Include="Images\pexel-book.png" />
     <Content Include="Images\storybook.png" />
     <Content Include="pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />

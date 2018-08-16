@@ -374,7 +374,100 @@ input .form-control {
 }
 /*END TEXT AREA*/
 
-.storyCreateBackground {
+/*Create Story Styling*/
+.storyCreateContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 220px);
+    grid-template-rows: repeat(7, 65px);
+    min-width: 1336px;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.createStory {
+    /*grid-row: 3;*/
+    grid-column: 1 / 7;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 40px;
+    color: #4d0000;
+    text-align: center;
+}
+
+#instructions {
+    /*grid-row: 4;*/
+    grid-column: 1 / 7;
+    font-size: 30px;
+    color: #4d0000;
+    text-align: center;
+}
+
+.createStory {
+    /*grid-row:6;*/
+    grid-column: 1 /7;
+}
+
+#chTheme {
+    /*grid-row: 8;*/
+    grid-column: 1 /7;
+    font-size: 30px;
+    color: #4d0000;
+    text-align: center;
+    justify-content: center;
+}
+
+.giveTitle {
+    /*grid-row:10;*/
+    grid-column: 1 / 7;
+}
+
+.form-control.text {
+    height: 50px;
+    width: 200px;
+}
+
+.col-md-10 {
+    justify-content: center;
+    text-align: center;
+}
+
+#choice {
+    font-size: 30px;
+    color: #4d0000;
+    text-align: center;
+}
+
+.createStoryBackground {
+    background-image: url('../Images/pexel-book.png');
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+    background-size: contain;
+    width: 100%;
+    height: 800px;
+    grid-row: 1 / span 6;
+    grid-column: 1 / span 18;
+}
+
+#createBut {
+    border-radius: 12px;
+    background-color: rgba(233, 235, 36, 0.75);
+    font-size: 24px;
+    padding: 8px 25px;
+    /*transition: 0.3s;*/
+}
+
+#myBtn {
+    grid-row: 1;
+    display: inline-block;
+    border-radius: 12px;
+    background-color: rgba(233, 235, 36, 0.75);
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-left: 500px;
+}
+/*end of create story styling*/
+
+/*.storyCreateBackground {
     display: grid;
     grid-template-rows: repeat(15,100px);
     grid-template-columns: repeat(15, 1fr);
@@ -390,9 +483,8 @@ input .form-control {
 #myBtn {
     grid-row: 4;
     grid-column: 7;
-    height:50px;
-    
-}
+    height:50px; 
+}*/
 
 /*Login/Register styling*/
 .login {
