@@ -227,7 +227,8 @@
     <Content Include="homePageIcons\pirate.png" />
     <Content Include="homePageIcons\pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="homePageIcons\princess.svg" />
-    <Content Include="Images\storybook3.jpg" />
+    <Content Include="homePageIcons\quill-drawing-a-line.png" />
+    <Content Include="Images\storybook.png" />
     <Content Include="pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -275,8 +276,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="StoriesIndexPhotos\creased-crinkled-crumpled-479444.jpg" />
     <Content Include="StoriesIndexPhotos\image %282%29.png" />
+    <Content Include="StoriesIndexPhotos\storyIndexPhoto.jpg" />
     <Content Include="StoriesIndexPhotos\piggy.jpg" />
     <Content Include="StoriesIndexPhotos\princess.png" />
     <Content Include="StoriesIndexPhotos\pirates.png" />

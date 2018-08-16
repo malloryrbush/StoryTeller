@@ -4,52 +4,86 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div class="detailsContainer">
-    <h1 class="detailsTitle">@Html.DisplayName(Model.Title)</h1>
-
-
-    <div class="@foreach (var item in Model.Paragraphs) {if (item.Text.ToString().Contains("dog")) { <p> Dog </p> } }">
-        @* Leave this empty *@
-    </div>
-    <div id="prompts">
-        @if (Model.Theme.Name == "Pirates")
-        {
-            <p>
-                The night was dark and the sea was calm.A ship sailed silently over the water.In the distance, a light was flickering.
-                As the ship came closer to the light, the crew coud see the unmistakable flag flying on the approaching ship.The peace was soon
-                broken as ife....
-            </p>}
-
-        @if (Model.Theme.Name == "Animals")
-        {
-            <p>
-                In a little meadow, nestled in the woods, was a pond.  It was quiet and peaceful, and the woodland animals would come to drink
-                and nibble at the flowers along the bank.  A mother rabbit, with her little bunnies, were skipping around in the grass, when all of a sudden.....
-            </p>}
-
-        @if (Model.Theme.Name == "Princesses")
-        {
-            <p>
-                There once was a young princess named Cordelia.  She lived in a high castle overlooking the sea.  She spent her days walking through beautiful
-                gardens, sitting in court with the king and queen and often getting very bored.  She wondered what was beyond the castle walls and longed to see
-                the world.  So one day....
-            </p>}
-    </div>
-
-    @foreach (var item in Model.Paragraphs)
-    {
-        <div class="detailsParagraphs">
-            @item.Text <br />
-            <div class="detailsAuthor">by : @item.Author</div>
-        </div>
+<style>
+    ul {
+        background-color: transparent;
     }
+
+    li a {
+        color: black;
+        background-color:rgba(248, 246, 246, 0.81);
+        border-radius:5px;
+    }
+
+        li a:hover {
+            background-color: gold;
+            color: black;
+        }
+</style>
+
+<div class="detailsContainer  @foreach (var item in Model.Paragraphs)
+    {
+        switch (Model.Title.ToString())
+        {
+            case "dog":
+                <p> Dog </p>
+                break;
+            case "cat":
+                <p> cat </p>
+                break;
+            default:
+                <p> @Model.Theme.Name </p>
+                break;
+        }
+    }">
+   
+    <h1 class="detailsTitle">@Html.DisplayName(Model.Title)</h1>
+    <div class="@Model.Theme.Name">
+   
+    </div>
+    <div class="storyDetailsBackground">
+        <div id="prompts">
+            @if (Model.Theme.Name == "Pirates")
+            {
+                <p id="piratePrompt">
+                    The night was dark and the sea was calm.A ship sailed silently over the water.In the distance, a light was flickering.
+                    As the ship came closer to the light, the crew coud see the unmistakable flag flying on the approaching ship.The peace was soon
+                    broken as ife....
+                </p>}
+
+            @if (Model.Theme.Name == "Animals")
+            {
+                <p id="AnimalPrompt">
+                    In a little meadow, nestled in the woods, was a pond.  It was quiet and peaceful, and the woodland animals would come to drink
+                    and nibble at the flowers along the bank.  A mother rabbit, with her little bunnies, were skipping around in the grass, when all of a sudden.....
+                </p>}
+
+            @if (Model.Theme.Name == "Princesses")
+            {
+                <p id="princessPrompt">
+                    There once was a young princess named Cordelia.  She lived in a high castle overlooking the sea.  She spent her days walking through beautiful
+                    gardens, sitting in court with the king and queen and often getting very bored.  She wondered what was beyond the castle walls and longed to see
+                    the world.  So one day....
+                </p>}
+        </div>
+
+        @foreach (var item in Model.Paragraphs)
+        {
+            <div class="detailsParagraphs">
+                @item.Text <br />
+
+
+
+                <div class="detailsAuthor">by : @item.Author</div>
+            </div><br />
+        }
+    </div>
+
     <div class="detailsPartialView">
         @{
             if (Model.Paragraphs.Count == 9)
             {
-                <p>is the final post, please write an ending!</p>
+                <p>This is the final post, please write an ending!</p>
             }
 
             if (Model.Paragraphs.Count < 10)
@@ -58,6 +92,7 @@
             }
         }
     </div>
+</div>
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")

@@ -4,61 +4,76 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<style>
+    ul {
+        background-color: transparent;
+    }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    li a {
+        color: black;
+        background-color: rgba(248, 246, 246, 0.81);
+        border-radius: 5px;
+    }
 
-    <div class="form-horizontal">
-        <h4>Story</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        li a:hover {
+            background-color: gold;
+            color: black;
+        }
+</style>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ThemeId, "Theme:", htmlAttributes: new { @class = "control-label col-md-2" })
+<div class="storyCreateBackground">
+    <div class="createAStory">
+        <button id="myBtn">RULES FOR POSTING</button>
 
-            <div class="col-md-10">
-                @Html.DropDownList("ThemeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ThemeId, "", new { @class = "text-danger" })
-            </div><br />
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>"RULES FOR POSTING:    1. NO SWEARING.       2. HAVE FUN."</p>
+            </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Title, "Story Title:", htmlAttributes: new { @class = "control-label col-md-2" })
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            <div class="form-horizontal">
+                <h4>Create A Story</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ThemeId, "Theme:", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+                        @Html.DropDownList("ThemeId", null, htmlAttributes: new { @class = "form-control" , style="width:300px; height:40px; font-size:18px;"})
+                        @Html.ValidationMessageFor(model => model.ThemeId, "", new { @class = "text-danger" })
+                    </div><br />
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, "Story Title:", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", style = "width:400px; height:100px; font-size:18px;" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" onclick="ruleAlert()" />
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" onclick="ruleAlert()" />
-            </div>
-        </div>
-    </div>
-
-
-
-
-}
-<button id="myBtn">RULES FOR POSTING</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>"RULES FOR POSTING:    1. NO SWEARING.       2. HAVE FUN."</p>
+        }
     </div>
 </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

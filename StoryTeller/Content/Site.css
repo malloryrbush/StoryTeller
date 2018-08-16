@@ -1,8 +1,14 @@
-﻿/*Navbar styling*/
+﻿body {
+    margin: 0;
+    display: grid;
+    /*grid-template-columns: repeat(6, 220px);
+    grid-template-rows: repeat(10, 65px);*/
+}
+/*Navbar styling*/
 .navbar {
     grid-row: 1;
     grid-column: 1 / span 6;
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     width: 100%;
     font-family: 'Acme';
@@ -18,19 +24,21 @@ ul {
 
 li {
     float: left;
+    font-size:18px;
 }
 
     li a {
         display: block;
         color: black;
+        background-color:transparent;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        border-right: 1px solid lightgray;
     }
 
         li a:hover {
-            background-color: #DDC7FF;
+            background-color: gold;
+            border-radius:5px;
         }
 
     li:last-child {
@@ -38,25 +46,113 @@ li {
     }
 /*end of navbar styling*/
 
-/*stories styling*/
-.containerStories {
+/*Home Page stylings*/
+.homeContainer {
     display: grid;
     grid-template-columns: repeat(6, 220px);
-    grid-template-rows: repeat(20, auto);
+    grid-template-rows: repeat(6, 65px);
+    background-image: url('../Images/storybook.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    min-width: 1336px;
+    min-height: 570px;
+    z-index:4;
+    padding-top:100px;
+}
+
+.homeText {
+    grid-row: 2/span 4;
+    grid-column: 2/span 4;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.34);
+    line-height:10px;
+}
+
+.welcomeText {
+    width: 600px;
+    font-family: 'Acme';
+    padding-left: 15%;
+    font-size: 50px;
+    color: gold;
+    text-shadow: 3px 3px black;
+    -webkit-text-stroke: 1px black;
+    z-index: 2;
+}
+
+.author {
+    padding-left: 25%;
+    width: 500px;
+    font-family: 'Acme';
+    font-size: 30px;
+    color: gold;
+    text-shadow: 1px 1px black;
+    -webkit-text-stroke: 1px black;
+    z-index: 2;
+}
+
+    .author a {
+        font-family: 'Acme';
+        font-size: 30px;
+        color: gold;
+        text-shadow: 1px 1px black;
+        -webkit-text-stroke: 1px black;
+    }
+    /*end of hompage stylings*/
+
+    /*stories styling*/
+.containerStories {
+    display: grid;
+    grid-template-columns: repeat(12, 110px);
+    grid-template-rows:repeat(12, 100px);
     min-width: 1336px;
     width: 90%;
     margin: 0px;
     padding: 0px;
-    padding-left: 2%
+    padding-left: 2%;
 }
 
-.wrapperStories {
+.wrapperStoriesPrincess {
     display: grid;
-    grid-template-columns: 190% 190% 190%;
+    grid-template-columns: 130%;
+    grid-column: 1/span 2;
     grid-gap: 10px;
     background-color: white;
-    color: white;
+    color: black;
     font-family: 'Acme';
+    text-align:center;
+}
+
+.wrapperStoriesPirates {
+    display: grid;
+    grid-template-columns: 130%;
+    grid-column: 4/span 2;
+    grid-gap: 10px;
+    background-color: white;
+    color: black;
+    font-family: 'Acme';
+    text-align: center;
+}
+
+.wrapperStoriesAnimals {
+    display: grid;
+    grid-template-columns: 130%;
+    grid-column: 7/span 2;
+    grid-gap: 10px;
+    background-color: white;
+    color: black;
+    font-family: 'Acme';
+    text-align: center;
+}
+
+.wrapperStoriesOther {
+    display: grid;
+    grid-template-columns: 130%;
+    grid-column: 10/span 2;
+    grid-gap: 10px;
+    background-color: white;
+    color: black;
+    font-family: 'Acme';
+    text-align: center;
 }
 
 .boxStories {
@@ -68,25 +164,48 @@ li {
     font-size: 100%;
 }
 
-.princessStories {
-    background-color: rgba(118, 113, 113, 0.46);
-    background-image: url('../StoriesIndexPhotos/princess.png');
-    background-size: cover;
+.storiesHeader {
+    padding-top: 10%;
     text-align: center;
-    color: black;
-    font-size: 20px;
+    font-family: 'Acme';
+    background-image: url('../StoriesIndexPhotos/storyIndexPhoto.jpg');
+    background-size: contain;
 }
 
+.storiesHeader a{
+    font-size:18px;
+    background-color:transparent;
+    border:1px solid black;
+    border-radius:5px;
+    color:black;
+}
+
+    .storiesHeader a:hover {
+        background-color: gold;
+    }
+
+    .createStory:hover{
+        background-color:gold;
+        color:black;
+    }
+
+    .princessStories {
+        background-color: rgba(118, 113, 113, 0.46);
+        background-color: pink;
+        text-align: center;
+        color: black;
+        font-size: 20px;
+    }
+
 .pirateStories {
-    background-image: url('../homepageicons/pirateimages/austin-neill-685080-unsplash.jpg');
-    background-size: cover;
+    background-color: red;
     color: black;
     text-align: center;
     font-size: 20px;
 }
 
 .animalStories {
-    background-image: url('../StoriesIndexPhotos/image (2).png');
+    background-color: green;
     text-align: center;
     color: white;
     font-size: 20px;
@@ -97,12 +216,6 @@ li {
     text-align: center;
     color: white;
     font-size: 20px;
-}
-
-.storiesHeader {
-    padding-top: 6%;
-    text-align: center;
-    font-family: 'Acme';
 }
 
 a.faveButton {
@@ -134,35 +247,60 @@ a.faveButton {
 
 /*Details stylings*/
 .detailsContainer {
-    display: grid;
-    grid-template-rows: repeat(15,100px);
-    grid-template-columns: repeat(15, 1fr);
-    background-image: url('../StoriesIndexPhotos/creased-crinkled-crumpled-479444.jpg');
-    background-size:cover;
+    /*display: grid;*/
+    grid-template-rows: repeat(10,50px);
+    grid-template-columns: repeat(15, 90px);
+    /*grid-row:1/span 10;
+    grid-column:1/span 15;*/
     width: 100%;
+    height:auto;
     text-align: center;
     word-wrap: break-word;
     font-size: 1vw;
     min-width: 375px;
-    grid-gap: 10px;
 }
-.detailsTitle{
-    grid-column:span 15;
+.detailsTitle {
+    /*grid-row:2;
+    grid-column:8;*/
+    grid-column:1/span 15;
+    font-size: 25px;
 }
-.detailsParagraphs{
-    grid-column:span 15;
+.detailsParagraphs {
+    grid-column: 4/span 9;
+    font-size: 18px;
 }
-.detailsPartialView{
-    grid-column:span 15;
+.detailsPartialView {
+    grid-column: 4/span 9;
+    grid-row: auto;
 }
-.detailsAuthor{
-    color:darkslategrey;
+.detailsAuthor {
+    grid-column: 4/span 9;
+    color: darkslategrey;
 }
 
-#prompts{
-    grid-column:2/span 13;
+.storyDetailsBackground{
+    /*grid-column:1/span 15;*/
+    grid-column:4/span 9;
+    background-color:rgba(229, 222, 222, 0.65);
+}
 
+#prompts {
+    font-size: 18px;
+}
 
+#piratePrompt {
+    font-family: 'Shojumaru', cursive;
+    font-size: 20px;
+}
+
+#animalPrompt {
+    font-family: 'Chela One', cursive;
+    font-size: 20px;
+}
+
+#princessPrompt {
+    font-family: 'Gabriela', serif;
+    font-size: 20px;
 }
 /*Styling for each individual themes*/
 .Animals {
@@ -177,24 +315,25 @@ a.faveButton {
 }
 
 .Pirates {
-        grid-column: span 15;
-        background-image: url('../StoriesIndexPhotos/pirates.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 200px;
-        width: auto;
-        grid-row: span 2;
+    grid-row:1/span 15;
+    grid-column:1/span 15;
+    background-image: url('../StoriesIndexPhotos/pirates.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    width: auto;
     }
 .Princesses {
-    grid-column: span 15;
+    display: grid;
+    grid-template-rows: repeat(10,50px);
+    grid-template-columns: repeat(15, 90px);
     background-image: url('../StoriesIndexPhotos/princess.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 200px;
+    min-height: 700px;
     width: auto;
-    grid-row: span 2;
 }
 .Other {
     grid-column: span 15;
@@ -206,17 +345,103 @@ a.faveButton {
     width: auto;
     grid-row: span 2;
 }
+
+.createContainer {
+    background-image: url('../StoriesIndexPhotos/princess.png');
+    display: grid;
+    grid-template-rows: repeat(15,200px);
+    grid-template-columns: repeat(15, 1fr);
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 1vw;
+    min-width: 375px;
+    min-height:700px;
+}
 /*end individual themes*/
 
 /*MAKING TEXT AREA BIGGER FOR SUBMITTING STORIES*/
 textarea {
     width: 400px;
     height: 200px;
+    background-color:rgba(245, 236, 236, 0.57)
+}
+
+input .form-control {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(245, 236, 236, 0.57)
 }
 /*END TEXT AREA*/
 
+.storyCreateBackground {
+    display: grid;
+    grid-template-rows: repeat(15,100px);
+    grid-template-columns: repeat(15, 1fr);
+    background-image: url('../StoriesIndexPhotos/princess.png');
+    height: 700px;
+}
+
+.createAStory{
+    grid-row:2;
+    grid-column:7;
+}
+
+#myBtn {
+    grid-row: 4;
+    grid-column: 7;
+    height:50px;
+    
+}
+
+/*Login/Register styling*/
+.login {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 65px);
+    min-width: 100%;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../../Images/storybook.png');
+    background-size: cover;
+    font-family:'Acme';
+}
+
+.loginInfo {
+    grid-column: 4 / span 1;
+    grid-row: 3
+}
+
+#loginForm {
+    border: 2px solid black;
+    border-radius: 9px;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 8px;
+}
+
+.reg {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 65px);
+    min-width: 100%;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../../Images/storybook.png');
+    background-size: cover;
+    font-family: 'Acme';
+}
+
+.reg-Info {
+    grid-column: 4 / span 1;
+    grid-row: 3;
+}
+/*End of login/register styling*/
+
 /* Media Queries for individual themes*/
-@media only screen and (max-width:1125px){
+@media only screen and (max-width:1125px) {
     .detailsContainer {
         grid-template-rows: repeat(15,150px);
         font-size:1.4vw;
@@ -359,52 +584,6 @@ textarea {
 }
 /*End of details styling*/
 
-/*Home Page stylings*/
-.homeContainer {
-    display: grid;
-    grid-template-columns: repeat(6, 220px);
-    grid-template-rows: repeat(10, 65px);
-    min-width: 1336px;
-    width: 90%;
-    margin: 0px;
-    padding: 0px;
-}
-
-.homeBackground {
-    grid-row: 1 / span 13;
-    grid-column: 1 / span 6;
-    background-image: url('../../Images/storybook3.jpg');
-    background-size: cover;
-}
-
-#welcomeText {
-    /*grid-row: 5;
-    grid-column: 1 / 7;*/
-    margin-top: 100px;
-    font-family: 'Amaranth', sans-serif;
-    font-size: 50px;
-    color: gold;
-    text-align: center;
-    text-shadow: 2px 2px #ff0000;
-}
-
-#writer {
-    /*grid-row: 2;
-    grid-column: 1 / 7;*/
-    /*margin-top: 25px;
-    margin-left: 45px;*/
-    font-family: 'Amaranth', sans-serif;
-    font-size: 30px;
-    color: gold;
-    text-align: center;
-    text-shadow: 2px 2px #ff0000;
-}
-/*end of hompage stylings*/
-
-
-
-
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -443,3 +622,6 @@ textarea {
         text-decoration: none;
         cursor: pointer;
     }
+
+/*END MODAL*/
+
