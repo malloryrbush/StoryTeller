@@ -3,12 +3,8 @@
     ViewBag.Title = "Index";
 }
 <style>
-    ul {
-        background-color: transparent;
-    }
-
     li a {
-        color: white;
+        color: black;
     }
 
         li a:hover {
@@ -17,10 +13,12 @@
         }
 </style>
 
+
+
 <div class="storiesHeader">
     <h2>Stories</h2>
     <p>
-        @Html.ActionLink("Create A New Story", "Create", new { @class = "createStory" })
+        @Html.ActionLink("Start A New Story", "Create", new { @class = "createStory" })
     </p>
 </div>
 
@@ -33,170 +31,173 @@
             if (item.Theme.Name == "Princesses")
             {
                 <div class="boxStories princessStories zoom">
-                    <p class="storiesIndexText">
-                        Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
-                        Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
-                    </p>
-                    @* Code to let the user know if the story is finished *@
+                    <div class="storiesIndexText">
+                        <p>
+                            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
+                            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
+                        </p>
+                        @* Code to let the user know if the story is finished *@
 
-                    @if (item.Paragraphs.Count == 10)
-                    {
-                        <p class="storiesIndexText">Story progress: Finished</p>
-                    }
-                    else
-                    {
-                        <p class="storiesIndexText">Story progress: Unfinished</p>
-                    }
-                    <div>
                         @if (item.Paragraphs.Count == 10)
                         {
-                            <p class="storiesIndexText">
-                                @Html.ActionLink("Read", "Details", new { id = item.Id })
-                            </p>
+                            <p>Story progress: Finished</p>
                         }
                         else
                         {
-                            <p class="storiesIndexText">
-                                @Html.ActionLink("Contribute", "Details", new { id = item.Id })
-                            </p>
+                            <p>Story progress: Unfinished</p>
                         }
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <p class="storiesIndexText">
-                                @Html.ActionLink("Favorite", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
-                            </p>
-                        }
+                            <div>
+                                @if (item.Paragraphs.Count == 10)
+                                {
+                                        @Html.ActionLink("Read", "Details", new { id = item.Id }, new { @class = "readIcon", style = "title:Read;" })
+                                }
+                                else
+                                {
+                                        @Html.ActionLink("Contribute", "Details", new { id = item.Id }, new { @class = "contributeIcon" })   
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                        @Html.ActionLink("Fave", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
+                                }
+                            </div>
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
                     </div>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </div>
-
             }
         }
     </div>
 
     <div class="wrapperStoriesPirates">
         <h2>Pirate Stories:</h2>
+
         @foreach (var item in Model)
         {
             if (item.Theme.Name == "Pirates")
             {
-        <div class="boxStories pirateStories zoom">
-            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
-            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
-            @* Code to let the user know if the story is finished *@
+                <div class="boxStories pirateStories zoom">
+                    <div class="storiesIndexText">
+                        <p>
+                            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
+                            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
+                        </p>
+                        @* Code to let the user know if the story is finished *@
 
-            @if (item.Paragraphs.Count == 10)
-            {
-                <p>Story progress: Finished</p>
-            }
-            else
-            {
-                <p>Story progress: Unfinished</p>
-            }
-            <div>
-                @if (item.Paragraphs.Count == 10)
-                {
-                    @Html.ActionLink("Read", "Details", new { id = item.Id })
-                }
-                else
-                {
-                    @Html.ActionLink("Contribute", "Details", new { id = item.Id })
-                }
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <p class="storiesIndexText">
-                        @Html.ActionLink("Add To Favorites", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
-                    </p>
-                }
-            </div>
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </div>
+                        @if (item.Paragraphs.Count == 10)
+                        {
+                            <p>Story progress: Finished</p>
+                        }
+                        else
+                        {
+                            <p>Story progress: Unfinished</p>
+                        }
+                            <div>
+                                @if (item.Paragraphs.Count == 10)
+                                {
+                                        @Html.ActionLink("Read", "Details", new { id = item.Id }, new { @class = "readIcon", style = "title:Read;" })
+                                }
+                                else
+                                {
+                                        @Html.ActionLink("Contribute", "Details", new { id = item.Id }, new { @class = "contributeIcon" }) 
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                        @Html.ActionLink("Fave", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
+                                }
+                            </div>
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    </div>
+                </div>
             }
         }
     </div>
 
     <div class="wrapperStoriesAnimals">
         <h2>Animal Stories:</h2>
+
         @foreach (var item in Model)
         {
             if (item.Theme.Name == "Animals")
             {
-        <div class="boxStories animalStories zoom">
-            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
-            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
-            @* Code to let the user know if the story is finished *@
+                <div class="boxStories animalStories zoom">
+                    <div class="storiesIndexText">
+                        <p>
+                            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
+                            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
+                        </p>
+                        @* Code to let the user know if the story is finished *@
 
-            @if (item.Paragraphs.Count == 10)
-            {
-                <p>Story progress: Finished</p>
-            }
-            else
-            {
-                <p>Story progress: Unfinished</p>
-            }
-            <div>
-                @if (item.Paragraphs.Count == 10)
-                {
-                    @Html.ActionLink("Read", "Details", new { id = item.Id })
-                }
-                else
-                {
-                    @Html.ActionLink("Contribute", "Details", new { id = item.Id })
-                }
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <p class="storiesIndexText">
-                        @Html.ActionLink("Add To Favorites", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
-                    </p>
-                }
-            </div>
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </div>
+                        @if (item.Paragraphs.Count == 10)
+                        {
+                            <p>Story progress: Finished</p>
+                        }
+                        else
+                        {
+                            <p>Story progress: Unfinished</p>
+                        }
+                        <div>
+                            @if (item.Paragraphs.Count == 10)
+                            {
+                               @Html.ActionLink("Read", "Details", new { id = item.Id }, new { @class = "readIcon", style = "title:Read;" } )
+                            }
+                            else
+                            {
+                               @Html.ActionLink("Contribute", "Details", new { id = item.Id }, new { @class = "contributeIcon" })
+                            }
+                               @if (User.Identity.IsAuthenticated)
+                            {
+                               @Html.ActionLink("Fave", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
+                            }
+                        </div>
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    </div>
+                </div>
             }
         }
     </div>
 
     <div class="wrapperStoriesOther">
         <h2>Other Stories:</h2>
+
         @foreach (var item in Model)
         {
             if (item.Theme.Name == "Other")
             {
-        <div class="boxStories otherStories zoom">
-            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
-            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
-            @* Code to let the user know if the story is finished *@
+                <div class="boxStories otherStories zoom">
+                    <div class="storiesIndexText">
+                        <p>
+                            Title: <i> @Html.DisplayFor(modelItem => item.Title)</i><br />
+                            Theme: <strong>@Html.DisplayFor(modelItem => item.Theme.Name)</strong>
+                        </p>
+                        @* Code to let the user know if the story is finished *@
 
-            @if (item.Paragraphs.Count == 10)
-            {
-                <p>Story progress: Finished</p>
-            }
-            else
-            {
-                <p>Story progress: Unfinished</p>
-            }
-            <div>
-                @if (item.Paragraphs.Count == 10)
-                {
-                    @Html.ActionLink("Read", "Details", new { id = item.Id })
-
-                }
-                else
-                {
-                    @Html.ActionLink("Contribute", "Details", new { id = item.Id })
-                }
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <p class="storiesIndexText">
-                        @Html.ActionLink("Add To Favorites", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
-                    </p>
-                }
-            </div>
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </div>
+                        @if (item.Paragraphs.Count == 10)
+                        {
+                            <p>Story progress: Finished</p>
+                        }
+                        else
+                        {
+                            <p>Story progress: Unfinished</p>
+                        }
+                            <div>
+                                @if (item.Paragraphs.Count == 10)
+                                {
+                                   @Html.ActionLink("Read", "Details", new { id = item.Id }, new { @class = "readIcon", style = "title:Read;" })
+                                }
+                                else
+                                {
+                                   @Html.ActionLink("Contribute", "Details", new { id = item.Id }, new { @class = "contributeIcon" })
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                   @Html.ActionLink("Fave", "SetFav", "Favorites", new { id = item.Id, title = item.Title }, new { @class = "faveButton" })
+                                }
+                            </div>
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    </div>
+                </div>
             }
         }
     </div>
 
 
-    </div>
+</div>

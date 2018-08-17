@@ -3,34 +3,37 @@
     ViewBag.Title = "Your Favorite Stories";
 }
 
-<div class="favoritesTitle">
-    <h2>Favorite Stories</h2>
-</div>
+<style>
+    li a {
+        color: white;
+    }
 
-<div class="containerStories">
-    <div class="wrapperStories">
-
-
-        @*<p>
-                @Html.ActionLink("Create New", "Create")
-            </p>*@
-        @*<div>
-                @Html.DisplayNameFor(model => model.StoryId)
-            </div>*@
-
-        @foreach (var item in Model)
-        {
-            <div class="boxStories zoom">
-                <p>
-                    Story Name:
-                    @Html.DisplayFor(modelItem => item.Title)
-                </p>
-                <p>@Html.ActionLink("Go to Story", "Details", "Stories", new { Id = item.StoryId }, null)</p>
-                <p>@Html.ActionLink("Remove from Favorites", "Delete", new { id = item.Id })</p>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id })*@
-                @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
-            </div>
+        li a:hover {
+            background-color: gold;
+            color: black;
         }
-    </div>
-</div>
+</style>
 
+<div class="favoritesBackground">
+    <div class="favoritesTitle">
+        <h2>Favorite Stories</h2>
+    </div>
+
+    <div class="containerFavorites">
+        <div class="wrapperFavorites">
+
+            @foreach (var item in Model)
+            {
+                <div class="boxStories faveBoxes zoom">
+                    <p>
+                        Story Name:
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </p>
+                    <p>@Html.ActionLink("Read story", "Details", "Stories", new { Id = item.StoryId }, null)</p>
+                    <p>@Html.ActionLink("Remove from favorites", "Delete", new { id = item.Id })</p>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>

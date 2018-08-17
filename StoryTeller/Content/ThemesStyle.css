@@ -1,0 +1,52 @@
+﻿.Animals {
+    background-image: url('../StoriesIndexPhotos/animals.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 700px;
+    width: auto;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.Pirates {
+    background-image: url('../StoriesIndexPhotos/pirateship2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 700px;
+    width: auto;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.Princesses {
+    background-image: url('../StoriesIndexPhotos/princess.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 700px;
+    width: auto;
+    padding-left:150px;
+    padding-right:150px;
+}
+
+.Other {
+    background-image: url('../StoriesIndexPhotos/otherbackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 700px;
+    width: auto;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.createContainer {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 1vw;
+    min-width: 375px;
+    min-height: 700px;
+}

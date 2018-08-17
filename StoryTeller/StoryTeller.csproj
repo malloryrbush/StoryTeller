@@ -215,6 +215,13 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DetailsStyle.css" />
+    <Content Include="Content\FavoritesStyle.css" />
+    <Content Include="Content\HomeStyle.css" />
+    <Content Include="Content\LoginStyle.css" />
+    <Content Include="Content\MediaQueriesStyle.css" />
+    <Content Include="Content\StoriesStyle.css" />
+    <Content Include="Content\ThemesStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -222,14 +229,18 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="homePageIcons\book-solid.svg" />
     <Content Include="homePageIcons\frog.png" />
     <Content Include="homePageIcons\like.png" />
+    <Content Include="homePageIcons\pen-fancy-solid.svg" />
     <Content Include="homePageIcons\pirate.png" />
-    <Content Include="homePageIcons\pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="homePageIcons\princess.svg" />
     <Content Include="homePageIcons\quill-drawing-a-line.png" />
+    <Content Include="Images\create.png" />
+    <Content Include="Images\Dog-Cartoon-Wallpapers-4.jpg" />
     <Content Include="Images\pexel-book.png" />
     <Content Include="Images\storybook.png" />
+    <Content Include="Images\storyindexbackground.jpg" />
     <Content Include="pirateImages\austin-neill-685080-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -277,11 +288,15 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="StoriesIndexPhotos\image %282%29.png" />
-    <Content Include="StoriesIndexPhotos\storyIndexPhoto.jpg" />
-    <Content Include="StoriesIndexPhotos\piggy.jpg" />
+    <Content Include="StoriesIndexPhotos\animals.jpg" />
+    <Content Include="StoriesIndexPhotos\otherbackground.jpg" />
+    <Content Include="StoriesIndexPhotos\pirateship2.jpg" />
+    <Content Include="StoriesIndexPhotos\pirateship3.jpg" />
     <Content Include="StoriesIndexPhotos\princess.png" />
-    <Content Include="StoriesIndexPhotos\pirates.png" />
+    <Content Include="StoriesIndexPhotos\StoryTeller_NewAnimal.png" />
+    <Content Include="StoriesIndexPhotos\StoryTeller_NewDesign.png" />
+    <Content Include="StoriesIndexPhotos\StoryTeller_NewDesignPirate.png" />
+    <Content Include="StoriesIndexPhotos\StoryTeller_NewPrincess.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

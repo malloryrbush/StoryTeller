@@ -1,0 +1,48 @@
+﻿.containerFavorites {
+    display: grid;
+    grid-template-columns: repeat(12, 110px);
+    grid-template-rows: repeat(10, auto);
+    min-width: 1336px;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 2%;
+}
+
+.favoritesBackground {
+    background-image: url('../Images/storybook.png');
+    height: 660px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.favoritesTitle {
+    padding-top: 6%;
+    font-family: 'Acme';
+    text-align: center;
+    color: gold;
+    -webkit-text-stroke: 1px black;
+    font-size: 28px;
+}
+
+.wrapperFavorites {
+    display: grid;
+    grid-template-columns: 190% 190% 190%;
+    grid-column: 1/span 2;
+    grid-gap: 10px;
+    color: black;
+    font-family: 'Acme';
+    text-align: center;
+}
+
+.faveBoxes{
+    background-color:white;
+}
+
+/*DELETE*/
+.delete{
+    padding:40px;
+    font-family:'Acme';
+    font-size:18px;
+    text-align:center;
+}

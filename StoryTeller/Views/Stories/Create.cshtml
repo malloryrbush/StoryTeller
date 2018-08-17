@@ -1,110 +1,92 @@
 ﻿@{
     ViewBag.Title = "Create";
 }
+<div class="textBackground">
 
-<div class="createBackground">
-    <h2>Create</h2>
-    <div class="createAStory">
-        @using (Html.BeginForm())
-        {@model StoryTeller.Data.Story
+    @using (Html.BeginForm())
+    {@model StoryTeller.Data.Story
 
-        @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
+    <div class="storyCreateContainer">
 
+        <div class="grid-item createStoryBackground">
 
-        <div class="storyCreateContainer">
-            <div class="grid-item createStoryBackground">
-                <div class="form-horizontal">
-                    <h1 class="createStory">Create a New Story</h1>
-                    <p id="instructions">If you're new to Storyteller, click the box below to see instructions</p>
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-horizontal">
+
+                <h1 id="createStory">Create a New Story</h1>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group" id="choice">
+
+                    @Html.LabelFor(model => model.ThemeId, "Choose a theme", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ThemeId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ThemeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="giveTitle">
                     <div class="form-group" id="choice">
-                        @Html.LabelFor(model => model.ThemeId, "1.Choose a Theme from The Box Below", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="chTheme">
-                            <div class="col-md-10">
-                                @Html.DropDownList("ThemeId", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.ThemeId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
+                        @Html.LabelFor(model => model.Title, "Story Title", htmlAttributes: new { @class = "control-label col-md-2" })
                     </div>
 
-                    <div class="giveTitle">
-                        <div class="form-group" id="choice">
-                            @Html.LabelFor(model => model.Title, "2. Give Your Story  a Title:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        </div>
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                        </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <p id="choice"> 3. Click Create</p>
-                            <input type="submit" value="Create" class="btn btn-default" onclick="ruleAlert()" id="createBut" />
-                            <br />
-                        </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" onclick="ruleAlert()" id="createBtn" />
+                        <br />
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Storyteller lets you write a part of the story.</p>
-                <p>We've started the stories for you - all the beginnings are the same but none will end the same.</p>
-                <p>Choose a story that's already in progress or you can start a new one.</p>
-                <p>Write one paragraph and click Create to add it to the story.  After 10 paragraphs, the story will end.</p>
-                <p>You can mark a story a "favorite" and go back to it.  All the finished stories will be available to read.</p>
-                <p>PLEASE -- no bad words and remember -- be creative and HAVE FUN!</p>
-            </div>
-        </div>
-
-    }
     </div>
+
+}
+
     <button id="myBtn">HOW TO USE STORYTELLER</button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <p>Storyteller lets you write a part of the story.</p>
+            <p>We've started the stories for you - all the beginnings are the same but none will end the same.</p>
+            <p>Choose a story that's already in progress or you can start a new one.</p>
+            <p>If you begin a new story, it must have a title.</p>
+            <p>Write one paragraph and click Create to add it to the story.  After 10 paragraphs, the story will end.</p>
+            <p>You can mark a story a "favorite" and go back to it.  All the finished stories will be available to read.</p>
+            <p>PLEASE -- no bad words and remember -- be creative and HAVE FUN!</p>
+        </div>
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+        
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @*@model StoryTeller.Data.Story
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model StoryTeller.Data.Story
 
     @{
         ViewBag.Title = "Create";

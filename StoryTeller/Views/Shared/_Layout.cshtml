@@ -4,10 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme%7CAlmendra+SC%7CAmaranth%7CBree+Serif%7CCarter+One%7CChela+One%7CCoiny%7CConcert+One%7CConvergence%7CGabriela%7CGermania+One%7CHandlee%7CItim%7CJolly+Lodger%7CJosefin+Sans%7CKalam%7CModern+Antiqua%7CNeucha%7CPatrick+Hand%7CPirata+One%7CShojumaru%7CUnifrakturCook:700" rel="stylesheet">
-    @*<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">*@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/HomeStyle.css")
+    @Styles.Render("~/Content/DetailsStyle.css")
+    @Styles.Render("~/Content/FavoritesStyle.css")
+    @Styles.Render("~/Content/LoginStyle.css")
+    @Styles.Render("~/Content/MediaQueriesStyle.css")
+    @Styles.Render("~/Content/StoriesStyle.css")
+    @Styles.Render("~/Content/ThemesStyle.css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -15,7 +22,7 @@
             <div class="grid-item navbar">
                 <ul>
                     <li><a href="/Home/Index">Home</a></li>
-                    <li><a href="/Stories/Index"><i class="fas fa-book">Read</i></a></li>
+                    <li><a href="/Stories/Index" title:"read stories"><i class="fas fa-book">Read</i></a></li>
                     <li><a href="/Stories/Create"><i class="fas fa-pen-fancy"></i>Create A Story</a></li>
                     <li><a href="/Favorites/Index"><i class="far fa-heart"></i>Favorites</a></li>
                     <li style="float:right"> @Html.Partial("_LoginPartial")</li>
@@ -32,7 +39,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @*@Scripts.Render("~/Scripts/Javascript1")*@
     <script src="~/Scripts/JavaScript1.js"></script>
     @RenderSection("scripts", required: false)
 </body>

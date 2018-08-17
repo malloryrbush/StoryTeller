@@ -1,0 +1,160 @@
+﻿@media only screen and (max-width:1125px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,150px);
+        font-size: 1.4vw;
+    }
+
+    .Animals {
+        height: 300px;
+    }
+
+    .Princesses {
+        height: 300px;
+    }
+
+    .Pirates {
+        height: 300px;
+    }
+
+    .Other {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,200px);
+        font-size: 1.7vw;
+    }
+
+    .Animals {
+        height: 400px;
+    }
+
+    .Princesses {
+        height: 400px;
+    }
+
+    .Pirates {
+        height: 400px;
+    }
+
+    .Other {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width:875px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,250px);
+        font-size: 2vw;
+    }
+
+    .Animals {
+        height: 500px;
+    }
+
+    .Princesses {
+        height: 500px;
+    }
+
+    .Pirates {
+        height: 500px;
+    }
+
+    .Other {
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,300px);
+        font-size: 2.3vw;
+    }
+
+    .Animals {
+        height: 600px;
+    }
+
+    .Princesses {
+        height: 600px;
+    }
+
+    .Pirates {
+        height: 600px;
+    }
+
+    .Other {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width:625px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,350px);
+        font-size: 2.6vw;
+    }
+
+    .Animals {
+        height: 700px;
+    }
+
+    .Princesses {
+        height: 700px;
+    }
+
+    .Pirates {
+        height: 700px;
+    }
+
+    .Other {
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,400px);
+        font-size: 3.2vw;
+    }
+
+    .Animals {
+        height: 800px;
+    }
+
+    .Princesses {
+        height: 800px;
+    }
+
+    .Pirates {
+        height: 800px;
+    }
+
+    .Other {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .detailsContainer {
+        grid-template-rows: repeat(15,450px);
+        font-size: 3.5vw;
+    }
+
+    .Animals {
+        height: 900px;
+    }
+
+    .Princesses {
+        height: 900px;
+    }
+
+    .Pirates {
+        height: 900px;
+    }
+
+    .Other {
+        height: 900px;
+    }
+}

@@ -1,0 +1,43 @@
+﻿.login {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 65px);
+    min-width: 100%;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../../Images/storybook.png');
+    background-size: cover;
+    font-family: 'Acme';
+}
+
+.loginInfo {
+    grid-column: 4 / span 1;
+    grid-row: 3
+}
+
+#loginForm {
+    border: 2px solid black;
+    border-radius: 9px;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 8px;
+}
+
+.reg {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 65px);
+    min-width: 100%;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../../Images/storybook.png');
+    background-size: cover;
+    font-family: 'Acme';
+}
+
+.reg-Info {
+    grid-column: 4 / span 1;
+    grid-row: 3;
+}

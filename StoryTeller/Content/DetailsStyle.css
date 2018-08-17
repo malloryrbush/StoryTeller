@@ -1,0 +1,57 @@
+﻿.detailsContainer {
+    /*display: grid;*/
+    /*grid-template-rows: repeat(10,50px);
+    grid-template-columns: repeat(15, 90px);*/
+    width: 100%;
+    height: auto;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 1vw;
+    min-width: 375px;
+}
+
+.detailsTitle {
+    grid-column: 1/span 15;
+    font-size: 25px;
+    background-color:transparent;
+    margin:0;
+    padding:30px;
+}
+
+.detailsParagraphs {
+    font-size: 18px;
+    grid-column:4/span 9;
+}
+
+.detailsAuthor {
+    grid-column: 4/span 9;
+    color: darkslategrey;
+}
+
+.storyText{
+ background-color:rgba(252, 251, 251, 0.55)
+}
+
+.storyDetailsBackground {
+    grid-column: 4/span 9;
+    background-color: rgba(229, 222, 222, 0.65);
+}
+
+#prompts {
+    font-size: 18px;
+}
+
+#piratePrompt {
+    font-family: 'Shojumaru', cursive;
+    font-size: 20px;
+}
+
+#AnimalPrompt {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+}
+
+#princessPrompt {
+    font-family: 'Gabriela', serif;
+    font-size: 20px;
+}
